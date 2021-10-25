@@ -1,0 +1,17 @@
+<mat-toolbar class="bgHeader">
+  <ul>
+    <a *ngIf="_userService.loginId()" routerLink="listUser">List User</a>
+  </ul>
+  <ul>
+    <a *ngIf="_userService.loginId()" routerLink="listRole">list Role</a>
+  </ul>
+  <ul>
+    <a *ngIf="_userService.loginId()" routerLink="listUser">Admin</a>
+  </ul>
+  <span class="headerSpacer"> </span>
+  <ul>
+    <a  *ngIf="!_userService.loginId()" mat-button routerLink="signUp">Sign Up </a>
+    <a  *ngIf="!_userService.loginId()" mat-button routerLink="login">Login </a>
+    <a  *ngIf="_userService.loginId()"  (click) = "_userService.logout()" mat-button> Logout </a>
+  </ul>
+</mat-toolbar>
